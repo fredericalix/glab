@@ -29,6 +29,17 @@ var DeleteProject = func(client *gitlab.Client, projectID interface{}) (*gitlab.
 	return project, nil
 }
 
+var ListProjects = func(client *gitlab.Client, opts *gitlab.ListProjectsOptions) ([]*gitlab.Project, error) {
+	if client == nil {
+		client = apiClient.Lab()
+	}
+	project, _, err := client.Projects.ListProjects(opts)
+	if err != nil {
+		return nil, err
+	}
+	return project, nil
+}
+
 var CreateProject = func(client *gitlab.Client, opts *gitlab.CreateProjectOptions) (*gitlab.Project, error) {
 	if client == nil {
 		client = apiClient.Lab()

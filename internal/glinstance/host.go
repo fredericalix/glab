@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	defaultHostname = "gitlab.com"
+	defaultHostname = "gitlab.pancasat.com"
 	defaultProtocol = "https"
 )
 
@@ -89,7 +89,7 @@ func APIEndpoint(hostname, protocol string) string {
 	if IsSelfHosted(hostname) {
 		return fmt.Sprintf("%s://%s/api/v4/", protocol, hostname)
 	}
-	return "https://gitlab.com/api/v4/"
+	return "https://gitlab.pancasat.com/api/v4/"
 }
 
 // GraphQLEndpoint returns the GraphQL API endpoint prefix for a GitLab instance :)
@@ -100,7 +100,7 @@ func GraphQLEndpoint(hostname, protocol string) string {
 	if IsSelfHosted(hostname) {
 		return fmt.Sprintf("%s://%s/api/graphql/", protocol, hostname)
 	}
-	return "https://gitlab.com/api/graphql/"
+	return "https://gitlab.pancasat.com/api/graphql/"
 }
 
 func HostnameValidator(v interface{}) error {
